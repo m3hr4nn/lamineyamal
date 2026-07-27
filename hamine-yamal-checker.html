@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A private, browser-based YAML to JSON and XML converter.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4fbf6">
+  <title>Hamine Yamal Checker</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#yaml-input">Skip to editor</a>
+
+  <header class="site-header">
+    <a class="brand" href="./hamine-yamal-checker.html" aria-label="Hamine Yamal Checker home">
+      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+      <span>Hamine Yamal</span>
+    </a>
+
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+      <span class="theme-icon" aria-hidden="true">☾</span>
+      <span class="theme-label">Dark</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">YAML CONVERTER</p>
+      <h1 id="page-title">Shape your data.<br><span>Keep it local.</span></h1>
+      <p class="intro">Convert YAML into clean JSON or XML instantly. Your files never leave your browser.</p>
+    </section>
+
+    <section class="workspace" aria-label="YAML conversion workspace">
+      <div class="workspace-toolbar">
+        <div class="format-control">
+          <label for="output-format">Convert to</label>
+          <select id="output-format">
+            <option value="json">JSON</option>
+            <option value="xml">XML</option>
+          </select>
+        </div>
+
+        <div class="toolbar-actions">
+          <input id="file-input" type="file" accept=".yaml,.yml,text/yaml,application/yaml" hidden>
+          <button class="button button-secondary" id="open-button" type="button">
+            <span aria-hidden="true">↑</span> Open file
+          </button>
+          <button class="button button-primary" id="convert-button" type="button">
+            Convert <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="editor-grid">
+        <article class="editor-panel">
+          <div class="panel-header">
+            <label for="yaml-input">YAML input</label>
+            <div class="panel-actions">
+              <span id="input-stats">0 lines</span>
+              <button class="text-button" id="clear-button" type="button">Clear</button>
+            </div>
+          </div>
+          <div class="drop-zone" id="drop-zone">
+            <textarea id="yaml-input" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="status">project:
+  name: Hamine Yamal
+  private: true
+  features:
+    - YAML to JSON
+    - YAML to XML
+  theme:
+    light: green
+    dark: charcoal</textarea>
+            <div class="drop-message" aria-hidden="true">Drop a YAML file here</div>
+          </div>
+        </article>
+
+        <article class="editor-panel">
+          <div class="panel-header">
+            <label for="output">Output</label>
+            <div class="panel-actions">
+              <button class="text-button" id="copy-button" type="button">Copy</button>
+              <button class="text-button" id="download-button" type="button">Download</button>
+            </div>
+          </div>
+          <textarea id="output" readonly spellcheck="false" aria-label="Converted output"></textarea>
+        </article>
+      </div>
+
+      <div class="status-row">
+        <p id="status" role="status" aria-live="polite"></p>
+        <p class="privacy-note"><span aria-hidden="true">●</span> Processed locally</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for readable data, without the upload.</p>
+    <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+  </footer>
+</body>
+</html>
