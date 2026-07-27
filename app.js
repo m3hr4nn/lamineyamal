@@ -98,7 +98,7 @@
     input.classList.remove("has-error");
     output.classList.remove("output-error");
     try {
-      if (!window.jsyaml) throw new Error("The YAML parser could not load. Check your internet connection.");
+      if (!window.jsyaml) throw new Error("The bundled YAML parser could not load. Make sure the vendor folder is included.");
       if (!input.value.trim()) throw new Error("Enter YAML or open a .yaml/.yml file first.");
 
       const documents = [];

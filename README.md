@@ -4,6 +4,8 @@ Simple YAML/YML Checker & Converter is a lightweight browser tool for validating
 
 All processing happens locally in your browser. The content you enter or open is never uploaded to a server.
 
+The YAML parser is included in the repository, so the downloaded project also works without an internet connection.
+
 ## Use it online
 
 Open the live application:
@@ -34,7 +36,15 @@ If the YAML syntax is invalid, the checker reports the problem line and column, 
 
 ## Run locally
 
-Download or clone the repository, then open `hamine-yamal-checker.html` in a modern web browser. An internet connection is required to load the `js-yaml` parser from jsDelivr.
+1. On GitHub, select **Code → Download ZIP**.
+2. Extract the complete ZIP archive.
+3. Open `hamine-yamal-checker.html` in a modern web browser.
+
+Keep `hamine-yamal-checker.html`, `app.js`, `styles.css`, and the `vendor` folder together. No installation, local server, or internet connection is required.
+
+## Included dependency
+
+This project includes the minified browser build of [js-yaml 4.1.0](https://github.com/nodeca/js-yaml) in `vendor/js-yaml.min.js`. js-yaml is distributed under the MIT License, and its license notice is retained in the bundled file.
 
 ## License
 
